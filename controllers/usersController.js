@@ -1,1 +1,1 @@
-exports.getAllUsers = () = {}
+exports.getAllUsers = () => {};
