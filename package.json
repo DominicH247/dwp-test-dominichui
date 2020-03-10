@@ -1,0 +1,17 @@
+{
+  "name": "dwp",
+  "version": "1.0.0",
+  "description": "entry challenge DWP",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Dominic Hui",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
