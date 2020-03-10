@@ -6,3 +6,5 @@ const usersRouter = require("./usersRouter.js");
 
 // Paths
 apiRouter.use("/users", usersRouter);
+
+module.exports = apiRouter;
