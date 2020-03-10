@@ -10,8 +10,8 @@ describe("/api/users", () => {
       .get("/api/users")
       .expect(200)
       .then(({ body: users }) => {
-        console.log(users);
-        expect(users).toBe("array");
+        expect(typeof users).toBe("object");
+        expect(Array.isArray(users.users)).toBe(true);
       });
-  }, 20000);
+  });
 });
