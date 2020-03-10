@@ -19,7 +19,7 @@ describe("/api/users", () => {
       .get("/api/users-typo")
       .expect(404)
       .then(({ body: msg }) => {
-        expect(msg).toBe("Not Found");
+        expect(msg).toBe("Not Found.");
       });
   });
 });
