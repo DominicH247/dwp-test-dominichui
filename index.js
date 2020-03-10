@@ -15,6 +15,6 @@ const { handleInvalidPath404 } = require("./errors/index.js");
 app.use("/api", apiRouter);
 
 //controller error handlers
-app.all("/*", handleInvalidPath);
+app.all("/*", handleInvalidPath404);
 
 module.exports = app;
