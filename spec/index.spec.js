@@ -14,4 +14,12 @@ describe("/api/users", () => {
         expect(Array.isArray(users.users)).toBe(true);
       });
   });
+  test("Not found error, responds with status code 404 and error message for incorrect route", () => {
+    return request
+      .get("/api/users-typo")
+      .expect(404)
+      .then(({ body: msg }) => {
+        expect(msg).toBe("Not Found");
+      });
+  });
 });
