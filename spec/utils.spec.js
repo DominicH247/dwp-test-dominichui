@@ -6,5 +6,6 @@ describe("distanceCalc(), takes latitude and longitude as parameters, and calcul
     const long = -117.7228641;
     const output = distanceCalc(lat, long);
     expect(typeof output === "number").toBe(true);
+    expect(output).toBe(5426);
   });
 });
