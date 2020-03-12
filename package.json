@@ -4,7 +4,8 @@
   "description": "entry challenge DWP",
   "main": "index.js",
   "scripts": {
-    "test": "jest spec/index.spec.js"
+    "test": "jest spec/index.spec.js",
+    "test-utils": "jest spec/utils.spec.js"
   },
   "author": "Dominic Hui",
   "license": "ISC",
