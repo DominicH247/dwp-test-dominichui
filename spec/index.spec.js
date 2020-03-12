@@ -18,8 +18,8 @@ describe("/api/users", () => {
     return request
       .get("/api/users-typo")
       .expect(404)
-      .then(({ body: msg }) => {
-        expect(msg).toBe("Not Found.");
+      .then(({ body: { msg } }) => {
+        expect(msg).toEqual("Not Found.");
       });
   });
 });
