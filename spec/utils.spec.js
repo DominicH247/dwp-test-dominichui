@@ -146,6 +146,15 @@ describe("getLondonDistance(), maps over array of user objects and invokes dista
         ip_address: "252.214.166.100",
         latitude: 41.1086264,
         longitude: -7.6901721
+      },
+      {
+        id: 11,
+        first_name: "test",
+        last_name: "test",
+        email: "test@squidoo.com",
+        ip_address: "182.47.212.121",
+        latitude: 51.540981,
+        longitude: -0.00164
       }
     ];
 
@@ -249,6 +258,15 @@ describe("getLondonDistance(), maps over array of user objects and invokes dista
         latitude: 41.1086264,
         longitude: -7.6901721,
         london_distance: 803
+      },
+      {
+        id: 11,
+        first_name: "test",
+        last_name: "test",
+        email: "test@squidoo.com",
+        ip_address: "182.47.212.121",
+        latitude: 51.540981,
+        longitude: -0.00164
       }
     ];
 
@@ -287,5 +305,43 @@ describe("getUsersWithinLondon(), takes an array of user objects that have the p
   test("function returns an array", () => {
     expect(getUsersWithinLondon([])).toEqual([]);
   });
-  test("When given, two user objects, one user withn 50 miles of london and other > 50 miles of london, a new array is returned containing the user living within London", () => {});
+  test("When given, two user objects, one user withn 50 miles of london and other > 50 miles of london, a new array is returned containing the user living within London", () => {
+    const input = [
+      {
+        id: 1,
+        first_name: "Maurise",
+        last_name: "Shieldon",
+        email: "mshieldon0@squidoo.com",
+        ip_address: "192.57.232.111",
+        latitude: 34.003135,
+        longitude: -117.7228641,
+        london_distance: 5426
+      },
+      {
+        id: 2,
+        first_name: "test",
+        last_name: "test",
+        email: "test@squidoo.com",
+        ip_address: "182.47.212.121",
+        latitude: 51.540981,
+        longitude: -0.00164,
+        london_distance: 5
+      }
+    ];
+
+    const output = [
+      {
+        id: 2,
+        first_name: "test",
+        last_name: "test",
+        email: "test@squidoo.com",
+        ip_address: "182.47.212.121",
+        latitude: 51.540981,
+        longitude: -0.00164,
+        london_distance: 5
+      }
+    ];
+
+    expect(getUsersWithinLondon(input)).toEqual(output);
+  });
 });
