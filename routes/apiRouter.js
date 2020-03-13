@@ -1,13 +1,10 @@
 const express = require("express");
 const apiRouter = express.Router();
 
-// error handlers
-const { handle405InvalidMethods } = require("../errors/index");
-
 // routers
-const usersRouter = require("./usersRouter.js").all(handle405InvalidMethods);
+const usersRouter = require("./usersRouter.js");
 
 // Paths
-apiRouter.use("/users", usersRouter).all(handle405InvalidMethods);
+apiRouter.use("/users", usersRouter);
 
 module.exports = apiRouter;
