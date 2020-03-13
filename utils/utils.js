@@ -4,7 +4,10 @@ const distanceCalc = (latitude, longitude) => {
   c = 2 ⋅ atan2( √a, √(1−a) )
   d = R ⋅ c
   where	φ is latitude, λ is longitude, R is earth’s radius (mean radius = 6,371km);
-  note that angles in radians */
+  note that angles in radians.
+
+  Courtesy of https://www.movable-type.co.uk/scripts/latlong.html
+  */
 
   // Central London
   const londonLat = 51.509865;
