@@ -1,11 +1,12 @@
 {
   "name": "dwp",
   "version": "1.0.0",
-  "description": "entry challenge DWP",
+  "description": "technical assessment DWP",
   "main": "index.js",
   "scripts": {
     "test": "jest spec/index.spec.js",
-    "test-utils": "jest spec/utils.spec.js"
+    "test-utils": "jest spec/utils.spec.js",
+    "start": "nodemon listen.js"
   },
   "author": "Dominic Hui",
   "license": "ISC",
