@@ -40,5 +40,7 @@ exports.distanceCalc = (latitude, longitude) => {
 
   const resultInMiles = Math.floor(kilometers * 0.62137);
 
+  console.log(resultInMiles);
+
   return resultInMiles;
 };
