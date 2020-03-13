@@ -53,4 +53,8 @@ const getLondonDistance = users => {
   return formatted;
 };
 
+const getUsersWithinLondon = () => {
+  return [];
+};
+
 module.exports = { distanceCalc, getLondonDistance };
