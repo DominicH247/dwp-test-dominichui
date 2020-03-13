@@ -250,4 +250,35 @@ describe("getLondonDistance(), maps over array of user objects and invokes dista
 
     expect(getLondonDistance(input)).toEqual(output);
   });
+
+  test("original input is not mutated", () => {
+    const input = [
+      {
+        id: 1,
+        first_name: "Maurise",
+        last_name: "Shieldon",
+        email: "mshieldon0@squidoo.com",
+        ip_address: "192.57.232.111",
+        latitude: 34.003135,
+        longitude: -117.7228641
+      }
+    ];
+    getLondonDistance(input);
+
+    expect(input).toEqual([
+      {
+        id: 1,
+        first_name: "Maurise",
+        last_name: "Shieldon",
+        email: "mshieldon0@squidoo.com",
+        ip_address: "192.57.232.111",
+        latitude: 34.003135,
+        longitude: -117.7228641
+      }
+    ]);
+  });
+});
+
+describe("getUsersWithinLondon(), takes an array of user objects that have the property london_distance and filters out users who live > 50 miles from london center", () => {
+  test("function returns an array", () => {});
 });
