@@ -49,12 +49,15 @@ const getLondonDistance = users => {
     return { ...user, london_distance };
   });
 
-  console.log(formatted);
   return formatted;
 };
 
-const getUsersWithinLondon = () => {
-  return [];
+const getUsersWithinLondon = users => {
+  return users.filter(user => {
+    return user.london_distance <= 50 && user;
+  });
+
+  console.log(filtered);
 };
 
 module.exports = { distanceCalc, getLondonDistance, getUsersWithinLondon };

@@ -266,7 +266,8 @@ describe("getLondonDistance(), maps over array of user objects and invokes dista
         email: "test@squidoo.com",
         ip_address: "182.47.212.121",
         latitude: 51.540981,
-        longitude: -0.00164
+        longitude: -0.00164,
+        london_distance: 5
       }
     ];
 
