@@ -31,7 +31,6 @@ describe("/api/users/london", () => {
       .get("/api/users/london")
       .expect(200)
       .then(({ body: users }) => {
-        console.log(users);
         expect(typeof users).toBe("object");
         expect(users.london_users.usersInLondonByCoords[0]).toHaveProperty(
           "london_distance"
@@ -66,3 +65,4 @@ describe("Handle invalid methods, POST, PATCH/PUT, DELETE", () => {
       });
   });
 });
+post;
