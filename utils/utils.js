@@ -49,6 +49,7 @@ const getLondonDistance = users => {
     return { ...user, london_distance };
   });
 
+  console.log(formatted);
   return formatted;
 };
 
