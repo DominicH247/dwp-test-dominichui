@@ -12,6 +12,7 @@ describe("/api/users", () => {
       .then(({ body: users }) => {
         expect(typeof users).toBe("object");
         expect(Array.isArray(users.users)).toBe(true);
+        expect(users.length === 1000).toBe(true);
       });
   });
   test("Not found error, responds with status code 404 and error message for incorrect route", () => {
