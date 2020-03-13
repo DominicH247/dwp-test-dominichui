@@ -56,8 +56,6 @@ const getUsersWithinLondon = users => {
   return users.filter(user => {
     return user.london_distance <= 50 && user;
   });
-
-  console.log(filtered);
 };
 
 module.exports = { distanceCalc, getLondonDistance, getUsersWithinLondon };
