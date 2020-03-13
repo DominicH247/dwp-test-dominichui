@@ -62,7 +62,7 @@ describe("Handle invalid methods, POST, PATCH/PUT, DELETE", () => {
       .post("/api/users/london")
       .expect(405)
       .then(({ body: { msg } }) => {
-        expect(msg).toBe("Invalid Method");
+        expect(msg).toBe("Method Not Allowed");
       });
   });
 });
