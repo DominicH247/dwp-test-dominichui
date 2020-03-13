@@ -1,4 +1,7 @@
-const { fetchAllUsers } = require("../models/usersModel.js");
+const {
+  fetchAllUsers,
+  fetchUsersWithinLondon
+} = require("../models/usersModel.js");
 
 exports.getAllUsers = (req, res, next) => {
   fetchAllUsers()
@@ -6,4 +9,8 @@ exports.getAllUsers = (req, res, next) => {
       res.status(200).send({ users });
     })
     .catch(next);
+};
+
+exports.getUsersWithinLondon = (req, res, next) => {
+  fetchUsersWithinLondon();
 };
