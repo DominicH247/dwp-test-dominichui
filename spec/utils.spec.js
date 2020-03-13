@@ -23,4 +23,32 @@ describe("getLondonDistance(), maps over array of user objects and invokes dista
   test("function returns an array", () => {
     expect(getLondonDistance()).toEqual([]);
   });
+  test("Single user object, takes lat and long values and returns new array with additional prop distance from london", () => {
+    const input = [
+      {
+        id: 1,
+        first_name: "Maurise",
+        last_name: "Shieldon",
+        email: "mshieldon0@squidoo.com",
+        ip_address: "192.57.232.111",
+        latitude: 34.003135,
+        longitude: -117.7228641
+      }
+    ];
+
+    const output = [
+      {
+        id: 1,
+        first_name: "Maurise",
+        last_name: "Shieldon",
+        email: "mshieldon0@squidoo.com",
+        ip_address: "192.57.232.111",
+        latitude: 34.003135,
+        longitude: -117.7228641,
+        london_distance: 5426
+      }
+    ];
+
+    expect(getLondonDistance(input)).toEqual(output);
+  });
 });
