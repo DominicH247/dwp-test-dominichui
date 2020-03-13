@@ -7,8 +7,19 @@ const {
 exports.fetchAllUsers = () => {
   return axios.get("https://bpdts-test-app.herokuapp.com/users");
 };
-exports.fetchUsersWithinLondon = users => {
-  const userDistances = getLondonDistance(users);
-  const usersWithinLondon = getUsersWithinLondon(userDistances);
-  return usersWithinLondon;
+exports.fetchUsersWithinLondon = allUsers => {
+  return axios
+    .get("https://bpdts-test-app.herokuapp.com/city/London/users")
+    .then(({ data: users }) => {
+      const listedInLondon = users;
+      const userDistances = getLondonDistance(allUsers);
+      const usersWithinLondon = getUsersWithinLondon(userDistances);
+
+      const formattedListedInLondon = getLondonDistance(listedInLondon);
+
+      return {
+        usersInLondonByCoords: [...usersWithinLondon],
+        usersListedInLondon: [...formattedListedInLondon]
+      };
+    });
 };
