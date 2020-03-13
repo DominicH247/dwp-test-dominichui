@@ -1,8 +1,14 @@
 const axios = require("axios");
+const {
+  getLondonDistance,
+  getUsersWithinLondon
+} = require("../utils/utils.js");
 
 exports.fetchAllUsers = () => {
   return axios.get("https://bpdts-test-app.herokuapp.com/users");
 };
-
-// london center lat 51.509865 long -0.118092
-// calculate distance between two points if greater than 50 miles exclude
+exports.fetchUsersWithinLondon = users => {
+  const userDistances = getLondonDistance(users);
+  const usersWithinLondon = getUsersWithinLondon(userDistances);
+  console.log(usersWithinLondon);
+};

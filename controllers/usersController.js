@@ -12,5 +12,9 @@ exports.getAllUsers = (req, res, next) => {
 };
 
 exports.getUsersWithinLondon = (req, res, next) => {
-  fetchUsersWithinLondon();
+  fetchAllUsers()
+    .then(({ data: users }) => {
+      return fetchUsersWithinLondon(users);
+    })
+    .then(() => {});
 };
