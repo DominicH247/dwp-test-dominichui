@@ -23,7 +23,7 @@ describe("getLondonDistance(), maps over array of user objects and invokes dista
   test("function returns an array", () => {
     expect(getLondonDistance()).toEqual([]);
   });
-  test("Single user object, takes lat and long values and returns new array with additional prop distance from london", () => {
+  test.only("Single user object, takes lat and long values and returns new array with additional prop distance from london", () => {
     const input = [
       {
         id: 1,

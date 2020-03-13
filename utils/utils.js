@@ -1,4 +1,4 @@
-exports.distanceCalc = (latitude, longitude) => {
+const distanceCalc = (latitude, longitude) => {
   /* Haversine
   formula:	a = sin²(Δφ/2) + cos φ1 ⋅ cos φ2 ⋅ sin²(Δλ/2)
   c = 2 ⋅ atan2( √a, √(1−a) )
@@ -43,6 +43,13 @@ exports.distanceCalc = (latitude, longitude) => {
   return resultInMiles;
 };
 
-exports.getLondonDistance = () => {
-  return [];
+const getLondonDistance = users => {
+  const formatted = users.map(user => {
+    const london_distance = distanceCalc(user.latitude, user.longitude);
+    return { ...user, london_distance };
+  });
+
+  return formatted;
 };
+
+module.exports = { distanceCalc, getLondonDistance };
