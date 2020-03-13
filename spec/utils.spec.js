@@ -18,3 +18,9 @@ describe("distanceCalc(), takes latitude and longitude as parameters, and calcul
     expect(distanceCalc(lat2, long2)).toBe(7014);
   });
 });
+
+describe("getLondonDistance(), maps over array of user objects and invokes distanceCalc() with the lat and long props of the user object. Returns new array with additional prop of london_distance on the user objects", () => {
+  test("function returns an array", () => {
+    expect(getLondonDistance()).toEqual([]);
+  });
+});
