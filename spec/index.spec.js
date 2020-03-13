@@ -25,23 +25,36 @@ describe("/api/users", () => {
   });
 });
 
-describe("/api/city/london", () => {
-  test("GET, responds with status code 200 and an array of user object of people as being listed as living in the city of london", () => {
-    return request.get("/api/city/london").then(({ body: users }) => {
-      expect(typeof users).toBe("object");
-      expect(Array.isArray(users.users)).toBe(true);
-      expect(users.users.length === 6).toBe(true);
-    });
-  });
-});
+// describe("/api/city/london", () => {
+//   test("GET, responds with status code 200 and an array of user object of people as being listed as living in the city of london", () => {
+//     return request.get("/api/city/london").then(({ body: users }) => {
+//       expect(typeof users).toBe("object");
+//       expect(Array.isArray(users.users)).toBe(true);
+//       expect(users.users.length === 6).toBe(true);
+//     });
+//   });
+// });
 
 describe("/api/users/london", () => {
   test("GET, responds with status code 200 and an array of user object of people living within 50 miles of the city of london", () => {
     return request.get("/api/users/london").then(({ body: users }) => {
+      console.log(users);
       expect(typeof users).toBe("object");
-      expect(users.users[0]).toHaveProperty("london_distance");
-      expect(users.users[0]["london_distance"] <= 50).toEqual(true);
-      expect(Array.isArray(users.users)).toBe(true);
+      expect(users.london_users.usersInLondonByCoords[0]).toHaveProperty(
+        "london_distance"
+      );
+      expect(users.london_users.usersListedInLondon[0]).toHaveProperty(
+        "london_distance"
+      );
+      expect(
+        users.london_users.usersInLondonByCoords[0]["london_distance"] <= 50
+      ).toEqual(true);
+      expect(Array.isArray(users.london_users.usersInLondonByCoords)).toBe(
+        true
+      );
+      expect(users.london_users.usersInLondonByCoords.length === 3).toBe(true);
+      expect(Array.isArray(users.london_users.usersListedInLondon)).toBe(true);
+      expect(users.london_users.usersListedInLondon.length === 6).toBe(true);
     });
   });
 });
