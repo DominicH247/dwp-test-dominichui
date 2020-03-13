@@ -16,8 +16,8 @@ exports.getUsersWithinLondon = (req, res, next) => {
     .then(({ data: users }) => {
       return fetchUsersWithinLondon(users);
     })
-    .then(users => {
-      res.status(200).send({ users });
+    .then(london_users => {
+      res.status(200).send({ london_users });
     })
     .catch(next);
 };
