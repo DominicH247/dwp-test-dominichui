@@ -10,5 +10,5 @@ exports.fetchAllUsers = () => {
 exports.fetchUsersWithinLondon = users => {
   const userDistances = getLondonDistance(users);
   const usersWithinLondon = getUsersWithinLondon(userDistances);
-  console.log(usersWithinLondon);
+  return usersWithinLondon;
 };

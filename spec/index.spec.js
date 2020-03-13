@@ -12,7 +12,7 @@ describe("/api/users", () => {
       .then(({ body: users }) => {
         expect(typeof users).toBe("object");
         expect(Array.isArray(users.users)).toBe(true);
-        expect(users.length === 1000).toBe(true);
+        expect(users.users.length === 1000).toBe(true);
       });
   });
   test("Not found error, responds with status code 404 and error message for incorrect route", () => {
@@ -29,8 +29,8 @@ describe("/api/users/london", () => {
   test("GET, responds with status code 200 and an array of user object of people living within 50 miles of the city of london", () => {
     return request.get("/api/users/london").then(({ body: users }) => {
       expect(typeof users).toBe("object");
-      expect(users[0]).toHaveProperty("london_distance");
-      expect(users[0]["london_distance"] <= 50).toEqual(true);
+      expect(users.users[0]).toHaveProperty("london_distance");
+      expect(users.users[0]["london_distance"] <= 50).toEqual(true);
       expect(Array.isArray(users.users)).toBe(true);
     });
   });
