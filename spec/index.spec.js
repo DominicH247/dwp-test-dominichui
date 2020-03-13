@@ -25,6 +25,16 @@ describe("/api/users", () => {
   });
 });
 
+describe("/api/city/london", () => {
+  test("GET, responds with status code 200 and an array of user object of people as being listed as living in the city of london", () => {
+    return request.get("/api/city/london").then(({ body: users }) => {
+      expect(typeof users).toBe("object");
+      expect(Array.isArray(users.users)).toBe(true);
+      expect(users.users.length === 6).toBe(true);
+    });
+  });
+});
+
 describe("/api/users/london", () => {
   test("GET, responds with status code 200 and an array of user object of people living within 50 miles of the city of london", () => {
     return request.get("/api/users/london").then(({ body: users }) => {

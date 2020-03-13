@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+app.set("json spaces", 4);
 
 //enable cors
 app.use(cors());
