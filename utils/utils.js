@@ -44,12 +44,10 @@ const distanceCalc = (latitude, longitude) => {
 };
 
 const getLondonDistance = users => {
-  const formatted = users.map(user => {
+  return users.map(user => {
     const london_distance = distanceCalc(user.latitude, user.longitude);
     return { ...user, london_distance };
   });
-
-  return formatted;
 };
 
 const getUsersWithinLondon = users => {
