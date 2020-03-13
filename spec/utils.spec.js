@@ -1,4 +1,8 @@
-const { distanceCalc, getLondonDistance } = require("../utils/utils.js");
+const {
+  distanceCalc,
+  getLondonDistance,
+  getUsersWithinLondon
+} = require("../utils/utils.js");
 
 describe("distanceCalc(), takes latitude and longitude as parameters, and calculated the distance in miles between the given coordinates and the coordinates for central London", () => {
   test("Function returns a value", () => {
@@ -280,5 +284,8 @@ describe("getLondonDistance(), maps over array of user objects and invokes dista
 });
 
 describe("getUsersWithinLondon(), takes an array of user objects that have the property london_distance and filters out users who live > 50 miles from london center", () => {
-  test("function returns an array", () => {});
+  test("function returns an array", () => {
+    expect(getUsersWithinLondon([])).toEqual([]);
+  });
+  test("When given, two user objects, one user withn 50 miles of london and other > 50 miles of london, a new array is returned containing the user living within London", () => {});
 });

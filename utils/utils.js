@@ -57,4 +57,4 @@ const getUsersWithinLondon = () => {
   return [];
 };
 
-module.exports = { distanceCalc, getLondonDistance };
+module.exports = { distanceCalc, getLondonDistance, getUsersWithinLondon };
